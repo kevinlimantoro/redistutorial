@@ -1,0 +1,23 @@
+﻿@model RedisTutorial.Models.Human
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login Hash</h2>
+@using (@Html.BeginForm())
+{
+    <div class="form-group row">
+        @Html.LabelFor(m => m.Email, new { @for = "Email", @class = "col-md-1" })
+        @Html.TextBoxFor(m => m.Email, new { @id = "Email", @class = "col-md-11" })
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(m => m.Password, new { @for = "Password", @class = "col-md-1" })
+        @Html.TextBoxFor(m => m.Password, new { @id = "Password", @type = "password", @class = "col-md-11" })
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+
+    <input id="Submit" type="submit" value="Submit" name="Submit" />
+}
